@@ -1,5 +1,4 @@
 <?php
-
 require 'vendor/autoload.php';
 
 MercadoPago\SDK::setAccessToken('TEST-2608625634008713-051023-7317f7a57923d8fa4b2b8ad656220051-1745978036');
@@ -16,15 +15,14 @@ $item->currency_id = "PEN";
 $preference->items = array($item);
 
 $preference->back_urls = array(
-    "success" => "http://localhost/WEB_INTEGRADO(SINGITHUB)/captura.php",
-    "failure" => "http://localhost/WEB_INTEGRADO(SINGITHUB)/fallo.php",
+    "success" => "http://localhost/WEB_INTEGRADO2/captura.php",
+    "failure" => "http://localhost/WEB_INTEGRADO2/fallo.php",
 );
 
-    $preference->auto_return = "approved";
-    $preference->binary_mode = true;
+$preference->auto_return = "approved";
+$preference->binary_mode = true;
 
 $preference->save();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +53,7 @@ $preference->save();
                 container: '.checkout-btn',
                 label: 'Pagar con MP'
             }
-        })
+        });
     </script>
     
 </body>

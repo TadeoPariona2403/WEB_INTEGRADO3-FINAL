@@ -30,7 +30,7 @@ if (is_array($datos)) {
     //$id_cliente = $datos['detalles']['payer']['payer_id'];
 
     $sql = $con->prepare("INSERT INTO compra (id_transaccion, fecha, status, email, id_cliente, total, medio_pago) VALUES (?,?,?,?,?,?,?)");
-    $sql->execute([$id_transaccion, $fecha_nueva, $status, $email, $idCliente, $total, 'paypal']);
+    $sql->execute([$id_transaccion, $fecha_nueva, $status, $email, $idCliente, $total, 'MP']);
     $id = $con->lastInsertId();
 
     if ($id > 0) {
@@ -64,5 +64,4 @@ if (is_array($datos)) {
     }
 }
 ?>
-
 

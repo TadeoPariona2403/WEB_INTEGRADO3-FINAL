@@ -2,6 +2,9 @@
 
 require 'config/config.php';
 require 'config/database.php';
+
+print_r($_SESSION);
+
 $db = new Database();
 $con = $db->conectar();
 
@@ -10,8 +13,6 @@ $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 //session_destroy();
-
-print_r($_SESSION);
 
 ?>
 
@@ -33,61 +34,12 @@ print_r($_SESSION);
 <div class="top-navbar">
         <p>HOLA</p>
         <div class="icons">
-            <a href="login.html"><img src="./images/imagenes/register.png" alt="" width="18px">LOGIN</a>
-            <a href="login.html"><img src="./images/imagenes/register.png" alt="" width="18px">REGISTER</a>
+            <a href="uilogin.php"><img src="./images/imagenes/register.png" alt="" width="18px">LOGIN</a>
+            <a href="uilogin.php"><img src="./images/imagenes/register.png" alt="" width="18px">REGISTER</a>
         </div>
-    </div>
+</div>
 
-    <nav class="navbar navbar-expand-lg" id="navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html" id="logo"><span id="span1">C</span>ORPORACION<span>MILO</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span><img src="./images/imagenes/menu.png" alt="" width="30px"></span> 
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorias
-                    </a>
-                    <ul class="dropdown-menu" style="background-color: rgb(67 0 86);">
-                        <li><a class="dropdown-item" href="#">PROCESADORES</a></li>
-                        <li><a class="dropdown-item" href="#">MOTHERBOARD</a></li>
-                        <li><a class="dropdown-item" href="#">MEMORIAS RAM</a></li>
-                        <li><a class="dropdown-item" href="#">ALMACENAMIENTO</a></li>
-                        <li><a class="dropdown-item" href="#">FUENTES DE PODER</a></li>
-                        <li><a class="dropdown-item" href="#">CASES</a></li>
-                        <li><a class="dropdown-item" href="#">COOLER</a></li>
-                        <li><a class="dropdown-item" href="#">PERIFERICOS</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contacto</a>
-                </li>
-            </ul>
-            <form class="d-flex" id="seach">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="checkout.php">
-                        <i class="fas fa-shopping-cart"></i><span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php include 'header.php'; ?>
 
       <section class="home">
         <div class="content">
